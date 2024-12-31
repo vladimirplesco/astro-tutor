@@ -1,11 +1,24 @@
 ---
 import Navigation from "./Navigation.astro";
 import Hamburger from "./Hamburger.astro";
+import ThemeIcon from './ThemeIcon.astro';
+import AstroHeart from './AstroHeart.astro';
+import AstroGreet from '../components/AstroGreet.astro';
+
 ---
 
 <header>
   <nav>
     <Hamburger />
+    <ThemeIcon />
+    <AstroHeart />
+    <AstroHeart />
+    <!-- Use the default message: “Welcome, world!” -->
+<AstroGreet />
+
+<!-- Use custom messages passed as a props. -->
+<AstroGreet message="Lovely day to build components!" />
+<AstroGreet message="Glad you made it! 👋" />
     <Navigation />
   </nav>
 </header>
