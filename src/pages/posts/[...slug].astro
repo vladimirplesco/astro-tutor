@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import MarkdownPostLayout from '../../layouts/MarkdownPostLayout.astro';
-import { sortPosts} from "../../scripts/helpers"
+import { sortPosts} from "../../scripts/helpers";
 export async function getStaticPaths() {
   const posts = sortPosts(await getCollection('blog'));
   return posts.map(post => ({
