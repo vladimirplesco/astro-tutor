@@ -3,8 +3,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BlogPost from '../components/BlogPost.astro';
 import LastUpdated from '../components/LastUpdated.astro';
-// const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
-const allPosts = await getCollection("blog");
+
+import { sortPosts} from "../scripts/helpers";// const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const allPosts = sortPosts(await getCollection("blog"));
 const pageTitle = "My Astro learning blog";
 console.log(JSON.stringify(allPosts, null, 2));
 
